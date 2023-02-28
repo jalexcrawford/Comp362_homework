@@ -1,0 +1,3 @@
+/home/alex/Desktop/comp362/jalexcrawfordLab01/list/CMakeFiles/rebuild_cache.dir
+/home/alex/Desktop/comp362/jalexcrawfordLab01/list/CMakeFiles/list.dir
+/home/alex/Desktop/comp362/jalexcrawfordLab01/list/CMakeFiles/edit_cache.dir

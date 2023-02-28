@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/alex/Desktop/comp362/CrawfordAlexLab02/sub.c
+stdlib.h
+-
+stddef.h
+-
+stdio.h
+-
+string.h
+-
+

@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/npipe/npipe.h
+sys/types.h
+-
+sys/stat.h
+-
+unistd.h
+-
+fcntl.h
+-
+stdio.h
+-
+stdlib.h
+-
+errno.h
+-
+string.h
+-
+
+/home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/npipe/npipe_send.c
+npipe.h
+/home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/npipe/npipe.h
+

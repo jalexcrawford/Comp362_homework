@@ -1,0 +1,11 @@
+/home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/cmake/CMakeFiles/edit_cache.dir
+/home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/cmake/CMakeFiles/rebuild_cache.dir
+/home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/cmake/CMakeFiles/ipc_POSIX_receiver.dir
+/home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/cmake/CMakeFiles/shm_POSIX_time_client.dir
+/home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/cmake/CMakeFiles/ipc_POSIX_sender.dir
+/home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/cmake/CMakeFiles/shm_POSIX_time_server.dir
+/home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/cmake/CMakeFiles/npipe_sender.dir
+/home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/cmake/CMakeFiles/npipe_receiver.dir
+/home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/cmake/CMakeFiles/pipe2.dir
+/home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/cmake/CMakeFiles/pipe1.dir
+/home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/cmake/CMakeFiles/pipe.dir

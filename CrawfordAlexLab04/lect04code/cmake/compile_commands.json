@@ -1,0 +1,47 @@
+[
+{
+  "directory": "/home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/cmake",
+  "command": "/usr/bin/cc    -D_FILE_OFFSET_BITS=64 -g -Wall --pedantic -g -O0 -D_DEBUG   -std=gnu11 -o CMakeFiles/ipc_POSIX_receiver.dir/ipc_POSIX/ipc_POSIX_receive.c.o   -c /home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/ipc_POSIX/ipc_POSIX_receive.c",
+  "file": "/home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/ipc_POSIX/ipc_POSIX_receive.c"
+},
+{
+  "directory": "/home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/cmake",
+  "command": "/usr/bin/cc    -D_FILE_OFFSET_BITS=64 -g -Wall --pedantic -g -O0 -D_DEBUG   -std=gnu11 -o CMakeFiles/shm_POSIX_time_client.dir/shm_POSIX/shm_POSIX_time_client.c.o   -c /home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/shm_POSIX/shm_POSIX_time_client.c",
+  "file": "/home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/shm_POSIX/shm_POSIX_time_client.c"
+},
+{
+  "directory": "/home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/cmake",
+  "command": "/usr/bin/cc    -D_FILE_OFFSET_BITS=64 -g -Wall --pedantic -g -O0 -D_DEBUG   -std=gnu11 -o CMakeFiles/ipc_POSIX_sender.dir/ipc_POSIX/ipc_POSIX_send.c.o   -c /home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/ipc_POSIX/ipc_POSIX_send.c",
+  "file": "/home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/ipc_POSIX/ipc_POSIX_send.c"
+},
+{
+  "directory": "/home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/cmake",
+  "command": "/usr/bin/cc    -D_FILE_OFFSET_BITS=64 -g -Wall --pedantic -g -O0 -D_DEBUG   -std=gnu11 -o CMakeFiles/shm_POSIX_time_server.dir/shm_POSIX/shm_POSIX_time_server.c.o   -c /home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/shm_POSIX/shm_POSIX_time_server.c",
+  "file": "/home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/shm_POSIX/shm_POSIX_time_server.c"
+},
+{
+  "directory": "/home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/cmake",
+  "command": "/usr/bin/cc    -D_FILE_OFFSET_BITS=64 -g -Wall --pedantic -g -O0 -D_DEBUG   -std=gnu11 -o CMakeFiles/npipe_sender.dir/npipe/npipe_send.c.o   -c /home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/npipe/npipe_send.c",
+  "file": "/home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/npipe/npipe_send.c"
+},
+{
+  "directory": "/home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/cmake",
+  "command": "/usr/bin/cc    -D_FILE_OFFSET_BITS=64 -g -Wall --pedantic -g -O0 -D_DEBUG   -std=gnu11 -o CMakeFiles/npipe_receiver.dir/npipe/npipe_receive.c.o   -c /home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/npipe/npipe_receive.c",
+  "file": "/home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/npipe/npipe_receive.c"
+},
+{
+  "directory": "/home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/cmake",
+  "command": "/usr/bin/cc    -D_FILE_OFFSET_BITS=64 -g -Wall --pedantic -g -O0 -D_DEBUG   -std=gnu11 -o CMakeFiles/pipe2.dir/pipes/pipe_2.c.o   -c /home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/pipes/pipe_2.c",
+  "file": "/home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/pipes/pipe_2.c"
+},
+{
+  "directory": "/home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/cmake",
+  "command": "/usr/bin/cc    -D_FILE_OFFSET_BITS=64 -g -Wall --pedantic -g -O0 -D_DEBUG   -std=gnu11 -o CMakeFiles/pipe1.dir/pipes/pipe_1.c.o   -c /home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/pipes/pipe_1.c",
+  "file": "/home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/pipes/pipe_1.c"
+},
+{
+  "directory": "/home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/cmake",
+  "command": "/usr/bin/cc    -D_FILE_OFFSET_BITS=64 -g -Wall --pedantic -g -O0 -D_DEBUG   -std=gnu11 -o CMakeFiles/pipe.dir/pipes/pipe.c.o   -c /home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/pipes/pipe.c",
+  "file": "/home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/pipes/pipe.c"
+}
+]

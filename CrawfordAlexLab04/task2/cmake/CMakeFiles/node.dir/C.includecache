@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/alex/Desktop/comp362/CrawfordAlexLab04/task2/message.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+errno.h
+-
+mqueue.h
+-
+stdbool.h
+-
+
+/home/alex/Desktop/comp362/CrawfordAlexLab04/task2/node.c
+message.h
+/home/alex/Desktop/comp362/CrawfordAlexLab04/task2/message.h
+

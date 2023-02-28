@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/shm_POSIX/shm_POSIX.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+fcntl.h
+-
+sys/shm.h
+-
+sys/stat.h
+-
+sys/mman.h
+-
+unistd.h
+-
+time.h
+-
+
+/home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/shm_POSIX/shm_POSIX_time_server.c
+shm_POSIX.h
+/home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/shm_POSIX/shm_POSIX.h
+

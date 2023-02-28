@@ -1,0 +1,1 @@
+/usr/bin/cc  -D_FILE_OFFSET_BITS=64 -g -Wall --pedantic -g -O0 -D_DEBUG  -rdynamic CMakeFiles/shm_POSIX_time_server.dir/shm_POSIX/shm_POSIX_time_server.c.o  -o bin/shm_POSIX_time_server  -lrt 

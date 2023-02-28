@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/alex/Desktop/comp362/jalexcrawfordLab01/list/list.c
+list.h
+/home/alex/Desktop/comp362/jalexcrawfordLab01/list/list.h
+
+/home/alex/Desktop/comp362/jalexcrawfordLab01/list/list.h
+stdlib.h
+-
+stddef.h
+-
+stdio.h
+-
+string.h
+-
+
+/home/alex/Desktop/comp362/jalexcrawfordLab01/list/main.c
+list.h
+/home/alex/Desktop/comp362/jalexcrawfordLab01/list/list.h
+

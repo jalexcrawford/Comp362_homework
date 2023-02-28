@@ -1,0 +1,1 @@
+/usr/bin/cc  -D_FILE_OFFSET_BITS=64 -g -Wall --pedantic -g -O0 -D_DEBUG  -rdynamic CMakeFiles/pipe2.dir/pipes/pipe_2.c.o  -o bin/pipe2 

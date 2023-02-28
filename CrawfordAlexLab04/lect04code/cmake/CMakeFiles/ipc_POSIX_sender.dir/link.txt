@@ -1,0 +1,1 @@
+/usr/bin/cc  -D_FILE_OFFSET_BITS=64 -g -Wall --pedantic -g -O0 -D_DEBUG  -rdynamic CMakeFiles/ipc_POSIX_sender.dir/ipc_POSIX/ipc_POSIX_send.c.o  -o bin/ipc_POSIX_sender  -lrt 

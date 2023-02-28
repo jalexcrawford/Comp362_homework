@@ -1,0 +1,1 @@
+/usr/bin/cc  -D_FILE_OFFSET_BITS=64 -g -Wall --pedantic -g -O0 -D_DEBUG  -rdynamic CMakeFiles/npipe_sender.dir/npipe/npipe_send.c.o  -o bin/npipe_sender 

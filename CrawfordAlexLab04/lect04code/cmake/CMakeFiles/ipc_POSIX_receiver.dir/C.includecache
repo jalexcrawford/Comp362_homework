@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/ipc_POSIX/ipc_POSIX_messg.h
+sys/types.h
+-
+sys/types.h
+-
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+errno.h
+-
+fcntl.h
+-
+sys/stat.h
+-
+mqueue.h
+-
+
+/home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/ipc_POSIX/ipc_POSIX_receive.c
+ipc_POSIX_messg.h
+/home/alex/Desktop/comp362/CrawfordAlexLab04/lect04code/ipc_POSIX/ipc_POSIX_messg.h
+
