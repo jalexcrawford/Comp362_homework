@@ -1,12 +1,12 @@
 [
 {
-  "directory": "/home/alex/Desktop/comp362/CrawfordAlexLab03/proc_hier",
-  "command": "/usr/bin/cc    -D_FILE_OFFSET_BITS=64 -g -Wall --pedantic -g -O0 -D_DEBUG   -std=gnu11 -o CMakeFiles/iam.dir/iam.c.o   -c /home/alex/Desktop/comp362/CrawfordAlexLab03/proc_hier/iam.c",
-  "file": "/home/alex/Desktop/comp362/CrawfordAlexLab03/proc_hier/iam.c"
+  "directory": "/home/alex/Documents/GitHub/Comp362/CrawfordAlexLab03/proc_hier",
+  "command": "/usr/bin/cc    -D_FILE_OFFSET_BITS=64 -g -Wall --pedantic -g -O0 -D_DEBUG   -std=gnu11 -o CMakeFiles/iam.dir/iam.c.o   -c /home/alex/Documents/GitHub/Comp362/CrawfordAlexLab03/proc_hier/iam.c",
+  "file": "/home/alex/Documents/GitHub/Comp362/CrawfordAlexLab03/proc_hier/iam.c"
 },
 {
-  "directory": "/home/alex/Desktop/comp362/CrawfordAlexLab03/proc_hier",
-  "command": "/usr/bin/cc    -D_FILE_OFFSET_BITS=64 -g -Wall --pedantic -g -O0 -D_DEBUG   -std=gnu11 -o CMakeFiles/proc_hier.dir/proc_hier.c.o   -c /home/alex/Desktop/comp362/CrawfordAlexLab03/proc_hier/proc_hier.c",
-  "file": "/home/alex/Desktop/comp362/CrawfordAlexLab03/proc_hier/proc_hier.c"
+  "directory": "/home/alex/Documents/GitHub/Comp362/CrawfordAlexLab03/proc_hier",
+  "command": "/usr/bin/cc    -D_FILE_OFFSET_BITS=64 -g -Wall --pedantic -g -O0 -D_DEBUG   -std=gnu11 -o CMakeFiles/proc_hier.dir/proc_hier.c.o   -c /home/alex/Documents/GitHub/Comp362/CrawfordAlexLab03/proc_hier/proc_hier.c",
+  "file": "/home/alex/Documents/GitHub/Comp362/CrawfordAlexLab03/proc_hier/proc_hier.c"
 }
 ]

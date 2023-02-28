@@ -1,4 +1,4 @@
-# Install script for directory: /home/alex/Desktop/comp362/CrawfordAlexLab03/proc_hier
+# Install script for directory: /home/alex/Documents/GitHub/Comp362/CrawfordAlexLab03/proc_hier
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/alex/Desktop/comp362/CrawfordAlexLab03/proc_hier/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/alex/Documents/GitHub/Comp362/CrawfordAlexLab03/proc_hier/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

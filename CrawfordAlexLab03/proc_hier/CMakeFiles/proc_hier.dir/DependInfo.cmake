@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/alex/Desktop/comp362/CrawfordAlexLab03/proc_hier/proc_hier.c" "/home/alex/Desktop/comp362/CrawfordAlexLab03/proc_hier/CMakeFiles/proc_hier.dir/proc_hier.c.o"
+  "/home/alex/Documents/GitHub/Comp362/CrawfordAlexLab03/proc_hier/proc_hier.c" "/home/alex/Documents/GitHub/Comp362/CrawfordAlexLab03/proc_hier/CMakeFiles/proc_hier.dir/proc_hier.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
