@@ -5,3 +5,6 @@ CrawfordAlexLab03/proc_hier/bin/iam
 CrawfordAlexLab03/proc_hier/bin/proc_hier
 *.cmake
 *.txt
+*.cmake
+*.o
+CrawfordAlexLab03/proc_hier/bin/proc_hier
