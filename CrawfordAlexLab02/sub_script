@@ -1,7 +1,71 @@
-Script started on 2023-03-01 13:18:34-08:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="101" LINES="24"]
-]0;alex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA: ~/Documents/GitHub/Comp362/CrawfordAlexLab02[01;32malex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA[00m:[01;34m~/Documents/GitHub/Comp362/CrawfordAlexLab02[00m$ ./sub > te 
-st.txt 
+Script started on 2023-03-01 13:38:33-08:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="101" LINES="24"]
+]0;alex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA: ~/Documents/GitHub/Comp362/CrawfordAlexLab02[01;32malex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA[00m:[01;34m~/Documents/GitHub/Comp362/CrawfordAlexLab02[00m$ ./sub --x  -+y -i input [K
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque pulvinar pellentesque habitant morbi tristique senectus. Eu non diam phasellus vestibulum lorem sed risus. Feugiat vivamus at augue eget arcu dictum varius. Justo nec ultrices dui sapien eget mi proin sed libero. Eu turpis egestas pretium aenean pharetra magna ac placerat. A condimentum vitae sapien pellentesque habitant morbi tristique. Maecenas accumsan lacus vel facilisis volutpat est velit egestas. Morbi enim nunc faucibus a pellentesque sit amet. Lectus urna duis convallis convallis tellus id interdum velit laoreet. Ornare quam viverra orci sagittis eu volutpat. Proin sed libero enim sed faucibus turpis.
+
+Tellus integer feugiat scelerisque varius morbi enim nunc faucibus a. Purus sit amet volutpat consequat mauris nunc congue. Dolor sit amet consectetur adipiscing elit duis tristique sollicitudin nibh. Nunc sed id semper risus in hendrerit gravida rutrum quisque. Pharetra magna ac placerat vestibulum lectus mauris ultrices eros in. Neque vitae tempus quam pellentesque nec nam aliquam sem et. Consectetur a erat nam at lectus. Euismod nisi porta lorem mollis. Accumsan sit amet nulla facilisi morbi. Mauris nunc congue nisi vitae suscipit tellus. Sagittis orci a scelerisque purus. At ultrices mi tempus imperdiet nulla. Eu feugiat pretium nibh ipsum consequat nisl vel. Lectus arcu bibendum at varius. Tincidunt lobortis feugiat vivamus at augue. Mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque. Sodales ut eu sem integer vitae justo. Felis eget nunc lobortis mattis aliquam faucibus purus.
+
+Non pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus. Dolor purus non enim praesent elementum facilisis. Facilisis volutpat est velit egestas dui id ornare. Fringilla ut morbi tincidunt augue interdum velit. Mauris vitae ultricies leo integer. Odio morbi quis commodo odio aenean sed adipiscing diam donec. Quis imperdiet massa tincidunt nunc pulvinar sapien et ligula ullamcorper. Bibendum est ultricies integer quis auctor. Commodo odio aenean sed adipiscing. Turpis egestas sed tempus urna et pharetra pharetra massa. In iaculis nunc sed augue lacus viverra. Erat nam at lectus urna duis. Pharetra massa massa ultricies mi quis hendrerit dolor. Mauris augue neque gravida in fermentum et. Feugiat scelerisque varius morbi enim nunc faucibus.
+
+Nibh mauris cursus mattis molestie a. Platea dictumst quisque sagittis purus sit amet volutpat consequat mauris. Aliquam sem et tortor consequat id porta. Nibh venenatis cras sed felis eget velit aliquet sagittis. Imperdiet dui accumsan sit amet nulla facilisi morbi. Felis eget velit aliquet sagittis id consectetur purus. Cras adipiscing enim eu turpis egestas pretium aenean pharetra magna. Nisi scelerisque eu ultrices vitae auctor eu augue ut. Felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices. Quis vel eros donec ac odio tempor orci dapibus ultrices. Id velit ut tortor pretium. Vel quam elementum pulvinar etiam non. Euismod nisi porta lorem mollis. Commodo odio aenean sed adipiscing diam donec. Tortor id aliquet lectus proin nibh nisl condimentum id venenatis. Ultrices mi tempus imperdiet nulla malesuada pellentesque. Id cursus metus aliquam eleifend. Tempus iaculis urna id volutpat lacus laoreet non. Integer enim neque volutpat ac tincidunt vitae semper quis. Dictumst vestibulum rhoncus est pellentesque.
+
+Odio pellentesque diam volutpat commodo sed egestas egestas. Suspendisse in est ante in nibh. Orci eu lobortis elementum nibh tellus molestie nunc. Interdum velit euismod in pellentesque massa placerat duis. Et ligula ullamcorper malesuada proin libero nunc consequat interdum varius. Pellentesque elit eget gravida cum sociis natoque penatibus. Faucibus ornare suspendisse sed nisi lacus sed viverra tellus in. Eget felis eget nunc lobortis mattis. Ut tortor pretium viverra suspendisse potenti nullam ac tortor vitae. Mi tempus imperdiet nulla malesuada pellentesque. Quam vulputate dignissim suspendisse in est ante in nibh.
+ÿ]0;alex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA: ~/Documents/GitHub/Comp362/CrawfordAlexLab02[01;32malex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA[00m:[01;34m~/Documents/GitHub/Comp362/CrawfordAlexLab02[00m$ ./sub --x  [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K-y nN -+xzZ -i input -ou[K output0
+]0;alex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA: ~/Documents/GitHub/Comp362/CrawfordAlexLab02[01;32malex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA[00m:[01;34m~/Documents/GitHub/Comp362/CrawfordAlexLab02[00m$ ./sub --ae iou -+sdafhuioivxcnvlkjzxvhasdfhoietha[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K-+bcgdg[Kjk asdxcvsadhfxzcvkljjoiwtawhosivdnhawoei;sfdhvn
+USAGE:
+	 sub [ -h | --fromChars -+toChars [-i inputFile] [-o outputFile] ]
+DESCRIPTION:
+	This utility copies text from an input stream to an output stream replacing every
+	instance of a specific character in fromChars with a corresponding (position-wise)
+	character from toChars. Any characters in fromChars and in toChars that do not
+	have corresponding counterparts in the other one are ignored. If an input file is
+	provided, the content is read from that file; otherwise, the standard input is used.
+	If an output file is provided, then the modified content is written to that file;
+	otherwise, the standard output is used.
+
+OPTIONS:
+	-- (followed by a string without separating space)
+		indicates all characters that will be replaced in the processed text
+	-+ (followed by a string without separating space)
+		indicates the characters that will be used to replace corresponding
+		(position-wise) characters from fromChars in the processed text
+	-i (followed by input file name)
+		use the provided file as an input stream instead of standard input
+	-o (followed by output file name)
+		use the provided file as an output stream instead of standard output
+	-h prints this help message; it is also a default if no command line
+		arguments are provided
+There are more characters to insert than to delete, please ensure there are equal numbers of characters to delete as insert.sfdhvn: command not found
+]0;alex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA: ~/Documents/GitHub/Comp362/CrawfordAlexLab02[01;32malex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA[00m:[01;34m~/Documents/GitHub/Comp362/CrawfordAlexLab02[00m$ --[K[Ksub [K[K[K[K./sub --a[Kx  -+y asio[K[K[K[Kasdeaivhoivz [K;q
+USAGE:
+	 sub [ -h | --fromChars -+toChars [-i inputFile] [-o outputFile] ]
+DESCRIPTION:
+	This utility copies text from an input stream to an output stream replacing every
+	instance of a specific character in fromChars with a corresponding (position-wise)
+	character from toChars. Any characters in fromChars and in toChars that do not
+	have corresponding counterparts in the other one are ignored. If an input file is
+	provided, the content is read from that file; otherwise, the standard input is used.
+	If an output file is provided, then the modified content is written to that file;
+	otherwise, the standard output is used.
+
+OPTIONS:
+	-- (followed by a string without separating space)
+		indicates all characters that will be replaced in the processed text
+	-+ (followed by a string without separating space)
+		indicates the characters that will be used to replace corresponding
+		(position-wise) characters from fromChars in the processed text
+	-i (followed by input file name)
+		use the provided file as an input stream instead of standard input
+	-o (followed by output file name)
+		use the provided file as an output stream instead of standard output
+	-h prints this help message; it is also a default if no command line
+		arguments are provided
+asdflkahsdguiowatywhoxcvjkz
+asdflkahsdguiowatywhoycvjkz
+xzkvhaoyzxhvoihxziyzxc^[iyvh       avhxczy
+yzkvhaoyzyhvoihyziyzyavhyczy
+^C
 ]0;alex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA: ~/Documents/GitHub/Comp362/CrawfordAlexLab02[01;32malex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA[00m:[01;34m~/Documents/GitHub/Comp362/CrawfordAlexLab02[00m$ exit
 exit
 
-Script done on 2023-03-01 13:18:49-08:00 [COMMAND_EXIT_CODE="25"]
+Script done on 2023-03-01 13:41:00-08:00 [COMMAND_EXIT_CODE="130"]

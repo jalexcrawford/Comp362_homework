@@ -1,3 +1,0 @@
-/home/alex/Desktop/comp362/CrawfordAlexLab02/build/CMakeFiles/rebuild_cache.dir
-/home/alex/Desktop/comp362/CrawfordAlexLab02/build/CMakeFiles/edit_cache.dir
-/home/alex/Desktop/comp362/CrawfordAlexLab02/build/CMakeFiles/sub.dir
