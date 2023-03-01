@@ -1,0 +1,19 @@
+Script started on 2023-03-01 12:38:55-08:00 [TERM="xterm-256color" TTY="/dev/pts/6" COLUMNS="102" LINES="28"]
+]0;alex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA: ~[01;32malex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA[00m:[01;34m~[00m$ cdlscd git/ls[Kcd app/ls[Kcd git/ls[Kcd[K
+]0;alex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA: ~[01;32malex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA[00m:[01;34m~[00m$ 
+]0;alex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA: ~[01;32malex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA[00m:[01;34m~[00m$ $ ps -elf | grep "proc_hier\|iam"
+$: command not found
+]0;alex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA: ~[01;32malex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA[00m:[01;34m~[00m$ 
+]0;alex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA: ~[01;32malex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA[00m:[01;34m~[00m$ $ ps -elf | grep "proc_hier\|iam"[1P[1P
+0 R alex       51716   51690 24  80   0 -   622 -      12:56 pts/1    00:00:23 [01;31m[Kiam[m[K 1
+0 R alex       51717   51716 24  80   0 -   622 -      12:56 pts/1    00:00:23 [01;31m[Kiam[m[K 1.1
+0 R alex       51718   51716 24  80   0 -   622 -      12:56 pts/1    00:00:22 [01;31m[Kiam[m[K 1.2
+0 R alex       51719   51717 24  80   0 -   622 -      12:56 pts/1    00:00:23 [01;31m[Kiam[m[K 1.1.1
+0 R alex       51720   51716 24  80   0 -   622 -      12:56 pts/1    00:00:23 [01;31m[Kiam[m[K 1.2.2
+0 R alex       51721   51717 24  80   0 -   622 -      12:56 pts/1    00:00:23 [01;31m[Kiam[m[K 1.1.2
+0 R alex       51722   51718 24  80   0 -   622 -      12:56 pts/1    00:00:23 [01;31m[Kiam[m[K 1.2.1
+0 S alex       51863   51030  0  80   0 -  2258 pipe_w 12:57 pts/10   00:00:00 grep --color=auto [01;31m[Kproc_hier[m[K\|[01;31m[Kiam[m[K
+]0;alex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA: ~[01;32malex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA[00m:[01;34m~[00m$ exit
+exit
+
+Script done on 2023-03-01 12:59:07-08:00 [COMMAND_EXIT_CODE="0"]

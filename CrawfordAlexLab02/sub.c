@@ -41,8 +41,14 @@ void main(int argc, char *argv[]){
 			}
 
 		}
-
+	if(strlen(removeChar) == strlen(addChar)){
 	replaceChar(removeChar, addChar);
+	}else if(strlen(removeChar) > strlen(addChar)){
+		printf("There are more characters to delete than to insert, ignoring extra deletion characters.");
+		replaceChar(removeChar, addChar);
+	}else{
+		printf("There are more characters to insert than to delete, please ensure there are equal numbers of characters to delete as insert.");
+	}
 	//printf("removeChar %s %d, addChar %s, output %s, input %s", removeChar,strlen(removeChar), addChar, outputFile, inputFile);
 	}
 }
@@ -58,8 +64,6 @@ void replaceChar(char *del, char *ins){
 			}
 		}
 		putc(c, stdout);
-		
-		
 	}
 	
 }

@@ -1,0 +1,249 @@
+Script started on 2023-03-01 13:00:10-08:00 [TERM="xterm-256color" TTY="/dev/pts/7" COLUMNS="100" LINES="28"]
+]0;alex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA: ~[01;32malex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA[00m:[01;34m~[00m$ sudo gdb -p 51722 iam
+[sudo] password for alex: 
+[35;1m[35;1mGNU gdb [m[35;1m(Ubuntu 9.2-0ubuntu1~20.04.1) [m[35;1m9.2[m[35;1m
+[m[mCopyright (C) 2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+iam: No such file or directory.
+Attaching to process 51722
+Reading symbols from [32m/home/alex/Documents/GitHub/Comp362/CrawfordAlexLab03/proc_hier/bin/iam[m...
+Reading symbols from [32m/lib/x86_64-linux-gnu/libc.so.6[m...
+Reading symbols from [32m/usr/lib/debug/.build-id/18/78e6b475720c7c51969e69ab2d276fae6d1dee.debug[m...
+Reading symbols from [32m/lib64/ld-linux-x86-64.so.2[m...
+Reading symbols from [32m/usr/lib/debug/.build-id/45/87364908de169dec62ffa538170118c1c3a078.debug[m...
+[34m0x0000560b961511ee[m in [33mmain[m ([36margc[m=2, [36margv[m=0x7ffca06e92e8)[m
+   [m at [32m/home/alex/Documents/GitHub/Comp362/CrawfordAlexLab03/proc_hier/iam.c[m:12
+12	   while (i == 0) /* NOTE: this is an endless loop; use gdb to change the value of i and continue */
+(gdb) set var i=5
+(gdb) c
+Continuing.
+[Inferior 1 (process 51722) exited normally]
+(gdb) q
+]0;alex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA: ~[01;32malex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA[00m:[01;34m~[00m$ sudo gdb -p 51722 iam[1P iam1 iam
+[35;1m[35;1mGNU gdb [m[35;1m(Ubuntu 9.2-0ubuntu1~20.04.1) [m[35;1m9.2[m[35;1m
+[m[mCopyright (C) 2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+iam: No such file or directory.
+Attaching to process 51721
+Reading symbols from [32m/home/alex/Documents/GitHub/Comp362/CrawfordAlexLab03/proc_hier/bin/iam[m...
+Reading symbols from [32m/lib/x86_64-linux-gnu/libc.so.6[m...
+Reading symbols from [32m/usr/lib/debug/.build-id/18/78e6b475720c7c51969e69ab2d276fae6d1dee.debug[m...
+Reading symbols from [32m/lib64/ld-linux-x86-64.so.2[m...
+Reading symbols from [32m/usr/lib/debug/.build-id/45/87364908de169dec62ffa538170118c1c3a078.debug[m...
+[34m0x000055cffa1081ee[m in [33mmain[m ([36margc[m=2, [36margv[m=0x7fff7039b3b8)[m
+   [m at [32m/home/alex/Documents/GitHub/Comp362/CrawfordAlexLab03/proc_hier/iam.c[m:12
+12	   while (i == 0) /* NOTE: this is an endless loop; use gdb to change the value of i and continue */
+(gdb) set var i=5
+(gdb) cset var i=5[C[C[C[C[C[Cc[K
+Continuing.
+[Inferior 1 (process 51721) exited normally]
+(gdb) q
+]0;alex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA: ~[01;32malex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA[00m:[01;34m~[00m$ sudo gdb -p 51721 iam[1P iam2 iam
+[35;1m[35;1mGNU gdb [m[35;1m(Ubuntu 9.2-0ubuntu1~20.04.1) [m[35;1m9.2[m[35;1m
+[m[mCopyright (C) 2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+iam: No such file or directory.
+Attaching to process 51722
+Could not attach to process.  If your uid matches the uid of the target
+process, check the setting of /proc/sys/kernel/yama/ptrace_scope, or try
+again as the root user.  For more details, see /etc/sysctl.d/10-ptrace.conf
+warning: process 51722 is a zombie - the process has already terminated
+ptrace: Operation not permitted.
+(gdb) q
+]0;alex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA: ~[01;32malex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA[00m:[01;34m~[00m$ sudo gdb -p 51722 iam[C[1P iam0 iam
+[35;1m[35;1mGNU gdb [m[35;1m(Ubuntu 9.2-0ubuntu1~20.04.1) [m[35;1m9.2[m[35;1m
+[m[mCopyright (C) 2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+iam: No such file or directory.
+Attaching to process 51720
+Reading symbols from [32m/home/alex/Documents/GitHub/Comp362/CrawfordAlexLab03/proc_hier/bin/iam[m...
+Reading symbols from [32m/lib/x86_64-linux-gnu/libc.so.6[m...
+Reading symbols from [32m/usr/lib/debug/.build-id/18/78e6b475720c7c51969e69ab2d276fae6d1dee.debug[m...
+Reading symbols from [32m/lib64/ld-linux-x86-64.so.2[m...
+Reading symbols from [32m/usr/lib/debug/.build-id/45/87364908de169dec62ffa538170118c1c3a078.debug[m...
+[34m0x00005568a0f891ee[m in [33mmain[m ([36margc[m=2, [36margv[m=0x7ffe3ef87818)[m
+   [m at [32m/home/alex/Documents/GitHub/Comp362/CrawfordAlexLab03/proc_hier/iam.c[m:12
+12	   while (i == 0) /* NOTE: this is an endless loop; use gdb to change the value of i and continue */
+(gdb) set var i=5
+(gdb) c
+Continuing.
+[Inferior 1 (process 51720) exited normally]
+(gdb) q
+]0;alex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA: ~[01;32malex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA[00m:[01;34m~[00m$ sudo gdb -p 51720 iam[1P iam[1P iam1 iam9 iam
+[35;1m[35;1mGNU gdb [m[35;1m(Ubuntu 9.2-0ubuntu1~20.04.1) [m[35;1m9.2[m[35;1m
+[m[mCopyright (C) 2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+iam: No such file or directory.
+Attaching to process 51719
+Reading symbols from [32m/home/alex/Documents/GitHub/Comp362/CrawfordAlexLab03/proc_hier/bin/iam[m...
+Reading symbols from [32m/lib/x86_64-linux-gnu/libc.so.6[m...
+Reading symbols from [32m/usr/lib/debug/.build-id/18/78e6b475720c7c51969e69ab2d276fae6d1dee.debug[m...
+Reading symbols from [32m/lib64/ld-linux-x86-64.so.2[m...
+Reading symbols from [32m/usr/lib/debug/.build-id/45/87364908de169dec62ffa538170118c1c3a078.debug[m...
+[34m0x0000560a14e021ee[m in [33mmain[m ([36margc[m=2, [36margv[m=0x7ffd8535e7e8)[m
+   [m at [32m/home/alex/Documents/GitHub/Comp362/CrawfordAlexLab03/proc_hier/iam.c[m:12
+12	   while (i == 0) /* NOTE: this is an endless loop; use gdb to change the value of i and continue */
+(gdb) set var i=5
+(gdb) c
+Continuing.
+[Inferior 1 (process 51719) exited normally]
+(gdb) q
+]0;alex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA: ~[01;32malex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA[00m:[01;34m~[00m$ sudo gdb -p 51719 iam[C[1P iam8 iam
+[35;1m[35;1mGNU gdb [m[35;1m(Ubuntu 9.2-0ubuntu1~20.04.1) [m[35;1m9.2[m[35;1m
+[m[mCopyright (C) 2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+iam: No such file or directory.
+Attaching to process 51718
+Reading symbols from [32m/home/alex/Documents/GitHub/Comp362/CrawfordAlexLab03/proc_hier/bin/iam[m...
+Reading symbols from [32m/lib/x86_64-linux-gnu/libc.so.6[m...
+Reading symbols from [32m/usr/lib/debug/.build-id/18/78e6b475720c7c51969e69ab2d276fae6d1dee.debug[m...
+Reading symbols from [32m/lib64/ld-linux-x86-64.so.2[m...
+Reading symbols from [32m/usr/lib/debug/.build-id/45/87364908de169dec62ffa538170118c1c3a078.debug[m...
+[33mmain[m ([36margc[m=2, [36margv[m=0x7fffefb156a8)[m
+   [m at [32m/home/alex/Documents/GitHub/Comp362/CrawfordAlexLab03/proc_hier/iam.c[m:12
+12	   while (i == 0) /* NOTE: this is an endless loop; use gdb to change the value of i and continue */
+(gdb) set var i=5
+(gdb) c
+Continuing.
+[Inferior 1 (process 51718) exited normally]
+(gdb) q
+]0;alex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA: ~[01;32malex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA[00m:[01;34m~[00m$ sudo gdb -p 51718 iam[1P iam7 iam
+[35;1m[35;1mGNU gdb [m[35;1m(Ubuntu 9.2-0ubuntu1~20.04.1) [m[35;1m9.2[m[35;1m
+[m[mCopyright (C) 2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+iam: No such file or directory.
+Attaching to process 51717
+Reading symbols from [32m/home/alex/Documents/GitHub/Comp362/CrawfordAlexLab03/proc_hier/bin/iam[m...
+Reading symbols from [32m/lib/x86_64-linux-gnu/libc.so.6[m...
+Reading symbols from [32m/usr/lib/debug/.build-id/18/78e6b475720c7c51969e69ab2d276fae6d1dee.debug[m...
+Reading symbols from [32m/lib64/ld-linux-x86-64.so.2[m...
+Reading symbols from [32m/usr/lib/debug/.build-id/45/87364908de169dec62ffa538170118c1c3a078.debug[m...
+[33mmain[m ([36margc[m=2, [36margv[m=0x7ffe8c8b4b18)[m
+   [m at [32m/home/alex/Documents/GitHub/Comp362/CrawfordAlexLab03/proc_hier/iam.c[m:12
+12	   while (i == 0) /* NOTE: this is an endless loop; use gdb to change the value of i and continue */
+(gdb) e[Kset var i=5
+(gdb) c
+Continuing.
+[Inferior 1 (process 51717) exited normally]
+(gdb) q
+]0;alex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA: ~[01;32malex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA[00m:[01;34m~[00m$ sudo gdb -p 51717 iam8[C[C[C[C7[C[C[C[C[1P iam6 iam
+[35;1m[35;1mGNU gdb [m[35;1m(Ubuntu 9.2-0ubuntu1~20.04.1) [m[35;1m9.2[m[35;1m
+[m[mCopyright (C) 2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+iam: No such file or directory.
+Attaching to process 51716
+Reading symbols from [32m/home/alex/Documents/GitHub/Comp362/CrawfordAlexLab03/proc_hier/bin/iam[m...
+Reading symbols from [32m/lib/x86_64-linux-gnu/libc.so.6[m...
+Reading symbols from [32m/usr/lib/debug/.build-id/18/78e6b475720c7c51969e69ab2d276fae6d1dee.debug[m...
+Reading symbols from [32m/lib64/ld-linux-x86-64.so.2[m...
+Reading symbols from [32m/usr/lib/debug/.build-id/45/87364908de169dec62ffa538170118c1c3a078.debug[m...
+[34m0x000055750ee1a1ee[m in [33mmain[m ([36margc[m=2, [36margv[m=0x7ffe18b73388)[m
+   [m at [32m/home/alex/Documents/GitHub/Comp362/CrawfordAlexLab03/proc_hier/iam.c[m:12
+12	   while (i == 0) /* NOTE: this is an endless loop; use gdb to change the value of i and continue */
+(gdb) set var i=5
+(gdb) c
+Continuing.
+[Inferior 1 (process 51716) exited normally]
+(gdb) 1
+Undefined command: "1".  Try "help".
+(gdb) q
+]0;alex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA: ~[01;32malex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA[00m:[01;34m~[00m$ exit
+exit
+
+Script done on 2023-03-01 13:01:43-08:00 [COMMAND_EXIT_CODE="0"]

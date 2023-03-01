@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/alex/Documents/GitHub/Comp362/CrawfordAlexLab03/proc_hier
+CMAKE_SOURCE_DIR = /home/alex/Documents/GitHub/Comp362/CrawfordAlexLab02
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/alex/Documents/GitHub/Comp362/CrawfordAlexLab03/proc_hier
+CMAKE_BINARY_DIR = /home/alex/Documents/GitHub/Comp362/CrawfordAlexLab02
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alex/Documents/GitHub/Comp362/CrawfordAlexLab03/proc_hier/CMakeFiles /home/alex/Documents/GitHub/Comp362/CrawfordAlexLab03/proc_hier/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alex/Documents/GitHub/Comp362/CrawfordAlexLab02/CMakeFiles /home/alex/Documents/GitHub/Comp362/CrawfordAlexLab02/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alex/Documents/GitHub/Comp362/CrawfordAlexLab03/proc_hier/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alex/Documents/GitHub/Comp362/CrawfordAlexLab02/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,84 +111,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named iam
+# Target rules for targets named sub
 
 # Build rule for target.
-iam: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 iam
-.PHONY : iam
+sub: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sub
+.PHONY : sub
 
 # fast build rule for target.
-iam/fast:
-	$(MAKE) -f CMakeFiles/iam.dir/build.make CMakeFiles/iam.dir/build
-.PHONY : iam/fast
+sub/fast:
+	$(MAKE) -f CMakeFiles/sub.dir/build.make CMakeFiles/sub.dir/build
+.PHONY : sub/fast
 
-#=============================================================================
-# Target rules for targets named proc_hier
+sub.o: sub.c.o
 
-# Build rule for target.
-proc_hier: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 proc_hier
-.PHONY : proc_hier
-
-# fast build rule for target.
-proc_hier/fast:
-	$(MAKE) -f CMakeFiles/proc_hier.dir/build.make CMakeFiles/proc_hier.dir/build
-.PHONY : proc_hier/fast
-
-iam.o: iam.c.o
-
-.PHONY : iam.o
+.PHONY : sub.o
 
 # target to build an object file
-iam.c.o:
-	$(MAKE) -f CMakeFiles/iam.dir/build.make CMakeFiles/iam.dir/iam.c.o
-.PHONY : iam.c.o
+sub.c.o:
+	$(MAKE) -f CMakeFiles/sub.dir/build.make CMakeFiles/sub.dir/sub.c.o
+.PHONY : sub.c.o
 
-iam.i: iam.c.i
+sub.i: sub.c.i
 
-.PHONY : iam.i
-
-# target to preprocess a source file
-iam.c.i:
-	$(MAKE) -f CMakeFiles/iam.dir/build.make CMakeFiles/iam.dir/iam.c.i
-.PHONY : iam.c.i
-
-iam.s: iam.c.s
-
-.PHONY : iam.s
-
-# target to generate assembly for a file
-iam.c.s:
-	$(MAKE) -f CMakeFiles/iam.dir/build.make CMakeFiles/iam.dir/iam.c.s
-.PHONY : iam.c.s
-
-proc_hier.o: proc_hier.c.o
-
-.PHONY : proc_hier.o
-
-# target to build an object file
-proc_hier.c.o:
-	$(MAKE) -f CMakeFiles/proc_hier.dir/build.make CMakeFiles/proc_hier.dir/proc_hier.c.o
-.PHONY : proc_hier.c.o
-
-proc_hier.i: proc_hier.c.i
-
-.PHONY : proc_hier.i
+.PHONY : sub.i
 
 # target to preprocess a source file
-proc_hier.c.i:
-	$(MAKE) -f CMakeFiles/proc_hier.dir/build.make CMakeFiles/proc_hier.dir/proc_hier.c.i
-.PHONY : proc_hier.c.i
+sub.c.i:
+	$(MAKE) -f CMakeFiles/sub.dir/build.make CMakeFiles/sub.dir/sub.c.i
+.PHONY : sub.c.i
 
-proc_hier.s: proc_hier.c.s
+sub.s: sub.c.s
 
-.PHONY : proc_hier.s
+.PHONY : sub.s
 
 # target to generate assembly for a file
-proc_hier.c.s:
-	$(MAKE) -f CMakeFiles/proc_hier.dir/build.make CMakeFiles/proc_hier.dir/proc_hier.c.s
-.PHONY : proc_hier.c.s
+sub.c.s:
+	$(MAKE) -f CMakeFiles/sub.dir/build.make CMakeFiles/sub.dir/sub.c.s
+.PHONY : sub.c.s
 
 # Help Target
 help:
@@ -197,15 +157,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... iam"
 	@echo "... edit_cache"
-	@echo "... proc_hier"
-	@echo "... iam.o"
-	@echo "... iam.i"
-	@echo "... iam.s"
-	@echo "... proc_hier.o"
-	@echo "... proc_hier.i"
-	@echo "... proc_hier.s"
+	@echo "... sub"
+	@echo "... sub.o"
+	@echo "... sub.i"
+	@echo "... sub.s"
 .PHONY : help
 
 

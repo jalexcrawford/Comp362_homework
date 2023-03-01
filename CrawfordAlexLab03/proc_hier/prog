@@ -1,0 +1,24 @@
+Script started on 2023-03-01 12:56:02-08:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="101" LINES="24"]
+]0;alex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA: ~/Documents/GitHub/Comp362/CrawfordAlexLab03/proc_hier/bin[01;32malex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA[00m:[01;34m~/Documents/GitHub/Comp362/CrawfordAlexLab03/proc_hier/bin[00m$ ./proc_hier 
+Process 1.1 pid is: 51717
+Process 1.1.2 pid is: 51721
+Process 1 pid is: 51716
+Process 1.2.2 pid is: 51720
+Process 1.2 pid is: 51718
+Process 1.2.1 pid is: 51722
+Process 1.1.1 pid is: 51719
+ERROR: -1 from wait() with errno = 10 in process 1.2.1
+Process 1.2.1 is terminating
+ERROR: -1 from wait() with errno = 10 in process 1.1.2
+Process 1.1.2 is terminating
+ERROR: -1 from wait() with errno = 10 in process 1.2.2
+Process 1.2.2 is terminating
+ERROR: -1 from wait() with errno = 10 in process 1.1.1
+Process 1.1.1 is terminating
+Process 1.2 is terminating
+Process 1.1 is terminating
+Process 1 is terminating
+]0;alex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA: ~/Documents/GitHub/Comp362/CrawfordAlexLab03/proc_hier/bin[01;32malex@alex-VivoBook-ASUSLaptop-E410MAB-L410MA[00m:[01;34m~/Documents/GitHub/Comp362/CrawfordAlexLab03/proc_hier/bin[00m$ exit
+exit
+
+Script done on 2023-03-01 13:01:51-08:00 [COMMAND_EXIT_CODE="0"]
