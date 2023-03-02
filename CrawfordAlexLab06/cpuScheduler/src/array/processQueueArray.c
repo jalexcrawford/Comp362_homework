@@ -74,8 +74,8 @@ bool processesLeftToExecute()
  */
 void addArrivingProcessesToReadyQueue(int time)
 {
-    for(int i = 0; i < processTable; i++){
-        if(processTable[i].arivalTime == time){
+    for(int i = 0; i < processTableSize; i++){
+        if(processTable[i].entryTime == time){
             addProcessToReadyQueue(processTable[i]);
         }
     }
@@ -104,7 +104,7 @@ void removeProcessFromReadyQueue(PROCESS *p)
     
     for(int i =0; i < readyQueueSize; i++){
         if(readyQueue[i] == p){
-            memmove(&readyQueue[i], &readyQueue[i + 1], (readyQueueSize - (i+1)) * sizeof(PROCESS*))
+            memmove(&readyQueue[i], &readyQueue[i + 1], (readyQueueSize - (i+1)) * sizeof(PROCESS*));
             readyQueueSize--;
         }
     }
@@ -115,7 +115,7 @@ void removeProcessFromReadyQueue(PROCESS *p)
  */
 PROCESS *fetchFirstProcessFromReadyQueue()
 {
-    PROCESS* firstProcess = NULL:
+    PROCESS* firstProcess = NULL;
     if(readyQueueSize >0){
         firstProcess = readyQueue[0];
         removeProcessFromReadyQueue(firstProcess);
@@ -129,10 +129,10 @@ PROCESS *fetchFirstProcessFromReadyQueue()
 PROCESS *findShortestProcessInReadyQueue()
 {
     PROCESS* shortestProcess = readyQueue[0];
-    int shortestTime = readyQueue[0].burstTime; //take the first burst time from the queue
+    int shortestTime = readyQueue[0]->burstTime; //take the first burst time from the queue
     for(int i = 0; i < readyQueueSize; i++){
-        if(readyQueue[i].burstTime < shortestTime){
-            shortestTime = readyQueue[i].burstTime;
+        if(readyQueue[i]->burstTime < shortestTime){
+            shortestTime = readyQueue[i]->burstTime;
             shortestProcess = readyQueue[i];
         }
     }
