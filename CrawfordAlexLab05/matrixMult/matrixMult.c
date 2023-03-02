@@ -2,8 +2,7 @@
 
 int main(int argc, char *argv[])
 {
-   //Despite the lab saying not to use global variables this will replace stdin with a filestream from the first
-   //arguement after the program is invoked. #saltyLikeAMargarita.
+   //Overwrite stdin to read from the input file
    if (freopen(argv[1], "r", stdin) == 0){
       oops("Cannot open the input file.\n", -1);
    }
@@ -47,8 +46,7 @@ void allocateAndLoadMatrices(int ***a, int ***b, int ***c, int *m, int *k, int *
 // takes pointers to two-dimensional matrices, so they can be allocated in here
 // and used by the caller
 {
-   //We're using scanf here becasue stdin is overwritten to read from a file. But don't worry
-   //no global variables were utilized in the making of this program. *shoves global pointers for matrixes behind a curtin*
+   //Use scanf because stdin has been overwritten and will read from the input file.
    if (scanf("%d %d %d", m, k, n) == 0)
       oops("Cannot read matrix sizes.\n", -2);
    //Allocate m * k array
@@ -116,8 +114,6 @@ pthread_t **alloc_tids(int m, int n)
    return tids;
 }
 
-//Moved matrixThread here because this is the best practice for organizing code, since the function is already declared in 
-//matrixMult.h the placement after the multiply function where it is used. #salty
 void *matrixThread(void *param)
 {
    // map the parameter onto the structure
@@ -149,7 +145,7 @@ void displayMatrix(int **matrix, int r, int c)
 }
 
 //Loop over each row of the matrix and free stuff, but it doesn't go over all of the cells because 
-//only the number of rows is called for some godforsaken reson.
+//only the number of rows is called for some reson.
 void freeMatrix(int **matrix, int r)
 {
    for(int i = 0; i < r; i++){
