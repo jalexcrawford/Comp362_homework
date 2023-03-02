@@ -128,9 +128,15 @@ PROCESS *fetchFirstProcessFromReadyQueue()
  */
 PROCESS *findShortestProcessInReadyQueue()
 {
-// TODO: implement
-
-    return NULL;
+    PROCESS* shortestProcess = readyQueue[0];
+    int shortestTime = readyQueue[0].burstTime; //take the first burst time from the queue
+    for(int i = 0; i < readyQueueSize; i++){
+        if(readyQueue[i].burstTime < shortestTime){
+            shortestTime = readyQueue[i].burstTime;
+            shortestProcess = readyQueue[i];
+        }
+    }
+    return shortestProcess;
 }
 
 /***
