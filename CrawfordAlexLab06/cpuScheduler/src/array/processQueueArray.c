@@ -38,8 +38,8 @@ void addProcessToTable(PROCESS process)
         processTableCapacity *= 2; //double capacity
         processTable = (PROCESS *) realloc(processTable, processTableCapacity * sizeof(PROCESS));
     }
-
-// TODO: complete
+    processTable[processTableSize] = process;
+    processTableSize++;
 }
 
 /***
@@ -61,8 +61,11 @@ void displayProcessTable()
 //will determine if any processes in the process queue have more to execute
 bool processesLeftToExecute()
 {
-// TODO: implement
-
+    for(int i=0; i<processTableSize; i++){
+        if(processTable[i].burstTime > 0){
+            return true;
+        }
+    }
     return false; //return 0 if all processes are complete
 }
 
@@ -71,7 +74,11 @@ bool processesLeftToExecute()
  */
 void addArrivingProcessesToReadyQueue(int time)
 {
-// TODO: implement
+    for(int i = 0; i < processTable; i++){
+        if(processTable[i].arivalTime == time){
+            addProcessToReadyQueue(processTable[i]);
+        }
+    }
 }
 
 /***
@@ -85,7 +92,8 @@ void addProcessToReadyQueue(PROCESS *pointer)
         readyQueue = (PROCESS **) realloc(readyQueue, readyQueueCapacity * sizeof(PROCESS *));
     }
 
-// TODO: complete
+    readyQueue[readyQueueSize] = pointer;
+    readyQueueSize++;
 }
 
 /***
@@ -93,9 +101,13 @@ void addProcessToReadyQueue(PROCESS *pointer)
  */
 void removeProcessFromReadyQueue(PROCESS *p)
 {
-// TODO: implement
-
-    readyQueueSize--;
+    
+    for(int i =0; i < readyQueueSize; i++){
+        if(readyQueue[i] == p){
+            memmove(&readyQueue[i], &readyQueue[i + 1], (readyQueueSize - (i+1)) * sizeof(PROCESS*))
+            readyQueueSize--;
+        }
+    }
 }
 
 /***
@@ -103,9 +115,12 @@ void removeProcessFromReadyQueue(PROCESS *p)
  */
 PROCESS *fetchFirstProcessFromReadyQueue()
 {
-// TODO: implement
-
-    return NULL;
+    PROCESS* firstProcess = NULL:
+    if(readyQueueSize >0){
+        firstProcess = readyQueue[0];
+        removeProcessFromReadyQueue(firstProcess);
+    }
+    return firstProcess;
 }
 
 /***
