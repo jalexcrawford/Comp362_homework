@@ -134,7 +134,6 @@ void srtfStep(void *param)
     //find the shortest job
     PROCESS* shortestJob = findShortestProcessInReadyQueue();
 
-    //get first job or next job when current job completes
     if(p->cpu == NULL || p->cpu->burstTime == 0){
         //when the current job completes we need to calculate the wait time
         if(p->cpu != NULL){
@@ -171,9 +170,32 @@ void srtfStep(void *param)
  */
 void rrStep(void *param)
 {
-        ALGORITHM_PARAMS *p = (ALGORITHM_PARAMS *) param;
-// TODO: implement
+    ALGORITHM_PARAMS *p = (ALGORITHM_PARAMS *) param;
 
+    if(p->cpu == NULL || p->cpu->burstTime == 0){
+        //when the current job completes we need to calculate the wait time
+        if(p->cpu != NULL){
+            //if the proces has been stopped we need to add the stopped time
+            //to the total wait time.
+            if(p->cpu->offTime != 0){
+                p->cpu->waitTime += p->time - p->cpu->offTime;
+            }else{
+                //lucky process didn't get interrupted.
+                p->cpu->waitTime = p->time - p->cpu->entryTime; // update the wait time
+            }
+        }
+        p->cpu = fetchFirstProcessFromReadyQueue();
+    }else if((p->time - p->cpu->entryTime) % p->quantum == 0){
+        //if the RR time is up, then swap processes
+        if(p->cpu->offTime ==0){
+            p->cpu->waitTime = p->time - p->cpu->entryTime;
+        }else{
+            p->cpu->waitTime += p->time - p->cpu->offTime;
+        }
+        p->cpu->offTime = p->time;
+        addProcessToReadyQueue(p->cpu);
+        p->cpu = fetchFirstProcessFromReadyQueue();
+    }
 }
 
 /***
