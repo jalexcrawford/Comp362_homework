@@ -76,7 +76,7 @@ void addArrivingProcessesToReadyQueue(int time)
 {
     for(int i = 0; i < processTableSize; i++){
         if(processTable[i].entryTime == time){
-            addProcessToReadyQueue(processTable[i]);
+            addProcessToReadyQueue((&processTable[i]));
         }
     }
 }
@@ -134,8 +134,10 @@ PROCESS *findShortestProcessInReadyQueue()
         if(readyQueue[i]->burstTime < shortestTime){
             shortestTime = readyQueue[i]->burstTime;
             shortestProcess = readyQueue[i];
+            
         }
     }
+    removeProcessFromReadyQueue(shortestProcess);
     return shortestProcess;
 }
 
@@ -178,7 +180,8 @@ void printAverageWaitTime()
  */
 void cleanUp()
 {
-// TODO: implement
+    free(processTable);
+    free(readyQueue);
 }
 
 

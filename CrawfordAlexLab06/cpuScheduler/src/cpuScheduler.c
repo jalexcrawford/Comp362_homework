@@ -112,9 +112,16 @@ void fcfsStep(void *param)
  */
 void sjfStep(void *param)
 {
+    ALGORITHM_PARAMS *p = (ALGORITHM_PARAMS *) param;
 
-// TODO: implement
+    //if the cpu has nothing currently executing
+    if(p->cpu == NULL || p->cpu->burstTime == 0){
+        p->cpu = findShortestProcessInReadyQueue();
+        if(p->cpu != NULL){
+            p->cpu->waitTime = p->time - p->cpu->entryTime; // update the wait time
 
+        }
+    }
 }
 
 /***
@@ -122,9 +129,41 @@ void sjfStep(void *param)
  */
 void srtfStep(void *param)
 {
+    //load params to do the thing
+    ALGORITHM_PARAMS *p = (ALGORITHM_PARAMS *) param;
+    //find the shortest job
+    PROCESS* shortestJob = findShortestProcessInReadyQueue();
 
-// TODO: implement
+    //get first job or next job when current job completes
+    if(p->cpu == NULL || p->cpu->burstTime == 0){
+        //when the current job completes we need to calculate the wait time
+        if(p->cpu != NULL){
+            //if the proces has been stopped we need to add the stopped time
+            //to the total wait time.
+            if(p->cpu->offTime != 0){
+                p->cpu->waitTime += p->time - p->cpu->offTime;
+            }else{
+                //lucky process didn't get interrupted.
+                p->cpu->waitTime = p->time - p->cpu->entryTime; // update the wait time
+            }
+        }
+    }else if(p->cpu != shortestJob){
+        //we are kicking the current job off of the cpu so we need to capture the 
+        //current wait time and save it in waittime
+        if(p->cpu->offTime == 0){
+            p->cpu->waitTime = p->time - p->cpu->entryTime;
+        }else{
+            //this nerd got interrupted already, so we need to capture the off time 
+            //and add it to the wait time.
+            p->cpu->waitTime += p->time - p->cpu->offTime;
+        }
+        //capture the offtime and save to the process struct the throw the process back to
+        //the ready q
+        p->cpu->offTime = p->time;
+        addProcessToReadyQueue(p->cpu);
 
+    }
+    p->cpu = shortestJob;
 }
 
 /***
@@ -132,7 +171,7 @@ void srtfStep(void *param)
  */
 void rrStep(void *param)
 {
-
+        ALGORITHM_PARAMS *p = (ALGORITHM_PARAMS *) param;
 // TODO: implement
 
 }
