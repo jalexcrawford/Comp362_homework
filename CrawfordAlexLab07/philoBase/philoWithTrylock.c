@@ -76,17 +76,20 @@ void *philosopher(void *num)
         printf("Philsopher no. %d gets hungry for the %d time!\n", id, i + 1);
 
         printf("Philsopher no. %d tries to grab chopstick %d\n", id, id); 
-        pthread_mutex_trylock(&(chopstick[id])); //philosopher tries to grap left chopstick
+        if(pthread_mutex_trylock(&(chopstick[id]))){ //philosopher tries to grap left chopstick
         printf("Philsopher no. %d has grabbed chopstick %d\n", id, id);
         usleep(SLEEP_TIME * 1);
         printf("Philsopher no. %d tries to grab chopstic %d\n", id, (id + 1) % numOfSeats);
-        pthread_mutex_trylock(&(chopstick[(id + 1) % numOfSeats]));  //philosopher tries to grab right chopstick 
+        if(pthread_mutex_trylock(&(chopstick[(id + 1) % numOfSeats])) != EBUSY){  //philosopher tries to grab right chopstick 
         printf("Philsopher no. %d grabbed chopstick %d\n", id, (id + 1) % numOfSeats);
-
+        }else{
+            pthread_mutex_unlock(&(chopstick[id])); //philosopher puts down left chopstick because right chopstick is in use.
+        }
+        }
         // YEEEAAAAH !!!
         printf("Philsopher no. %d eating\n", id);
 
-        // usleep (DELAY);
+        //usleep (SLEEP_TIME);
 
         printf("Philsopher no. %d stopped eating\n", id);
         pthread_mutex_unlock(&(chopstick[id])); //philosopher puts down left chopstick
