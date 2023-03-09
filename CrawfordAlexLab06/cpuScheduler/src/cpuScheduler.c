@@ -185,16 +185,18 @@ void rrStep(void *param)
             }
         }
         p->cpu = fetchFirstProcessFromReadyQueue();
-    }else if((p->time - p->cpu->entryTime) % p->quantum == 0){
+        quantum = p->quantum - 1;
+    }else if(quantum == 0){
         //if the RR time is up, then swap processes
-        if(p->cpu->offTime ==0){
-            p->cpu->waitTime = p->time - p->cpu->entryTime;
-        }else{
-            p->cpu->waitTime += p->time - p->cpu->offTime;
-        }
+        //first calculate the time that the process was off the cpu
+        //this will be the current time - the time it was kicked off - quantum. 
+        p->cpu->waitTime += p->time - p->cpu->offTime - p->quantum;
         p->cpu->offTime = p->time;
         addProcessToReadyQueue(p->cpu);
         p->cpu = fetchFirstProcessFromReadyQueue();
+        quantum = p->quantum - 1;
+    }else{
+        quantum--;
     }
 }
 
