@@ -29,3 +29,5 @@ CrawfordAlexLab06/cpuScheduler/cmake/bin/cpuSchedulerL
 CrawfordAlexLab07/philoBase/Makefile
 CrawfordAlexLab07/philoBase/CMakeFiles/Makefile2
 CrawfordAlexLab07/philoBase/bin/philosophers
+*.zip
+CrawfordAlexLab06/cpuScheduler/cpuSchedulerA-logs

@@ -1,3 +1,9 @@
+/**
+  * Alex Crawford
+  * COMP 362L-01
+  * Spring 2023
+ **/
+
 #include "processQueue.h"
 
 PROCESS *processTable;

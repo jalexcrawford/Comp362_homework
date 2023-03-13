@@ -1,3 +1,8 @@
+/**
+  * Alex Crawford
+  * COMP 362L-01
+  * Spring 2023
+ **/
 #include "cpuScheduler.h"
 
 static int quantum;

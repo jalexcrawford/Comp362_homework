@@ -7,8 +7,20 @@
 //random amount of time (cycle of pickup/eat/put down chopstick)
 #define SLEEP_TIME ( (rand() % 5 + 1) * 1000)
 
+//enumerate states
+enum STATE {THINKING, HUNGRY, EATING}; 
+
 //pointer to a function that is executed by every thread (philosopher)
 void *philosopher(void *id);
+
+//pick up chopsticks #howYOUdoin'
+void* pickup(void* id);
+
+//put down chopstick
+void* putdown(void* id);
+
+//check if a chopstick in use
+void* test(void* id);
 
 //array holding IDs of chopsticks
 pthread_mutex_t *chopstick;
@@ -28,6 +40,9 @@ int main(int argc, char **argv)
 
     chopstick = calloc(numOfSeats, sizeof(pthread_mutex_t));
 
+    enum STATE state[numOfSeats];
+
+
     // set the seed for random number generator
     srand(time(NULL));
 
@@ -45,8 +60,10 @@ int main(int argc, char **argv)
         pthread_mutex_init(chopstick + i, NULL);
 
     //create philosophers
-    for (i = 0; i < numOfSeats; i++)
+    for (i = 0; i < numOfSeats; i++){
         pthread_create(&philosopher_tid[i], NULL, philosopher, (void *) i);
+        state[i] = THINKING;
+    }
 
     //wait for philosophers to finish
     for (i = 0; i < numOfSeats; i++)
@@ -66,7 +83,6 @@ void *philosopher(void *num)
     int id = (long) num;
 
     printf("Philsopher no. %d sits at the table.\n", id);
-
     // philosophers arrive at the table at various times
     usleep(SLEEP_TIME);
 
@@ -74,7 +90,6 @@ void *philosopher(void *num)
     for (i = 0; i < numOfTurns; i++)
     {
         printf("Philsopher no. %d gets hungry for the %d time!\n", id, i + 1);
-
         printf("Philsopher no. %d tries to grab chopstick %d\n", id, id); 
         pthread_mutex_lock(&(chopstick[id])); //philosopher tries to grap left chopstick
         printf("Philsopher no. %d has grabbed chopstick %d\n", id, id);
