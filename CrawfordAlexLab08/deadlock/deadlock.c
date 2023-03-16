@@ -1,3 +1,8 @@
+/**
+  * Alex Crawford
+  * COMP 362L-01
+  * Spring 2023
+ **/
 // AJ Bieszczad - 10/21/2018
 
 #include "deadlock.h"
@@ -126,13 +131,43 @@ void loadDependencies(char *inputBuffer, WAIT_FOR_GRAPH *graph)
 }
 
 void detectDeadlocks(WAIT_FOR_GRAPH *graph, int currentNode, PROCESS *currentWaitForList) {
-   // TODO: Search for cycles
+    graph->dependencies[currentNode][graph->numberOfProcesses + 1] = 1; //set processed to 1
+    if(graph->dependencies[currentNode][graph->numberOfProcesses] == 1){ //check if visited is 1 if visited already, we found a cycle and we need to do stuff.
+        deadlockDetected = true;
+        printTable(graph);
+        printf(">> DEADLOCKED <<");
+        printCycle(currentWaitForList);
+        return;
+    }else{
+        (graph->dependencies[currentNode][graph->numberOfProcesses]) = 1;
+        printf("visited node %s \n", graph->processes[currentNode]);
+        printTable(graph);
+        for(int i = 0; i < graph->numberOfProcesses; i++){
+            if(graph->dependencies[currentNode][i] == 1){
+                PROCESS node;
+                node.processName = graph->processes[currentNode];
+                node.next = currentWaitForList;
+                detectDeadlocks(graph, i, &node);
+            }
+        }
+    }
+   
 }
 
 void printTable(WAIT_FOR_GRAPH *graph) {
-   // TODO: Print the adjacency matrix
+    printf("GRAPH ADJACENCY MATRIX\n");
+    for(int i = 0; i < graph->numberOfProcesses; i++){
+        for(int j = 0; j < graph->numberOfProcesses; j++){
+            printf("%c", graph->dependencies[i][j]);
+        }
+        printf("\n");
+    }
 }
 
 void printCycle(PROCESS *list) {
-   // TODO: Print the cycle found
+    if(list == NULL){
+        return;
+    }
+    printCycle(list->next);
+    printf("%s ", list->processName);
 }
