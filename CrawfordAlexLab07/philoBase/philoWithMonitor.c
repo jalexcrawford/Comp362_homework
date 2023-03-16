@@ -11,16 +11,16 @@
 enum STATE {THINKING, HUNGRY, EATING}; 
 
 //pointer to a function that is executed by every thread (philosopher)
-void *philosopher(void *id);
+void *philosopher(int *id);
 
 //pick up chopsticks #howYOUdoin'
-void* pickup(void* id);
+void* pickup(___int_size_t_h* id);
 
 //put down chopstick
-void* putdown(void* id);
+void* putdown(int* id);
 
 //check if a chopstick in use
-void* test(void* id);
+void* test(int* id);
 
 //array holding IDs of chopsticks
 pthread_mutex_t *chopstick;
@@ -34,7 +34,7 @@ int main(int argc, char **argv)
         printf("Usage: philosophers <number of seats> <number of turns>");
         return 1;
     }
-
+    
     numOfSeats = strtod(argv[1], NULL);
     numOfTurns = strtod(argv[2], NULL);
 
@@ -78,7 +78,7 @@ int main(int argc, char **argv)
     return 0;
 }
 
-void *philosopher(void *num)
+void *philosopher(int *num)
 {
     int id = (long) num;
 
@@ -89,28 +89,9 @@ void *philosopher(void *num)
     int i;
     for (i = 0; i < numOfTurns; i++)
     {
-        printf("Philsopher no. %d gets hungry for the %d time!\n", id, i + 1);
-        printf("Philsopher no. %d tries to grab chopstick %d\n", id, id); 
-        pthread_mutex_lock(&(chopstick[id])); //philosopher tries to grap left chopstick
-        printf("Philsopher no. %d has grabbed chopstick %d\n", id, id);
-        usleep(SLEEP_TIME * 1);
-        printf("Philsopher no. %d tries to grab chopstic %d\n", id, (id + 1) % numOfSeats);
-        pthread_mutex_lock(&(chopstick[(id + 1) % numOfSeats]));  //philosopher tries to grab right chopstick 
-        printf("Philsopher no. %d grabbed chopstick %d\n", id, (id + 1) % numOfSeats);
-
-        // YEEEAAAAH !!!
-        printf("Philsopher no. %d eating\n", id);
-
-        // usleep (DELAY);
-
-        printf("Philsopher no. %d stopped eating\n", id);
-        pthread_mutex_unlock(&(chopstick[id])); //philosopher puts down left chopstick
-        printf("Philsopher no. %d has returned chopstick %d\n", id, id);
-        usleep(SLEEP_TIME * 1);
-        pthread_mutex_unlock(&(chopstick[(id + 1) % numOfSeats])); //philosopher puts down right chopstick
-        printf("Philsopher no. %d has returned chopstick %d\n", id, (id + 1) % numOfSeats);
-
-        printf("Philsopher no. %d finished turn %d\n", id, i + 1);
+        pickup(id);
+        printf("Eating");
+        putdown(id);
     }
 
     printf(">>>>>> Philsopher no. %d finished meal. <<<<<<\n", id);
@@ -118,3 +99,24 @@ void *philosopher(void *num)
     pthread_exit(NULL);
 }
 
+void *pickup(void* id){
+    state[id] = HUNGRY;
+    test(id);
+    if(state[id] != EATING){
+        pthread_cond_wait();
+    }
+
+}
+
+void* test(void* id){
+    void* leftHand = (numOfSeats + (int) id + 1) % numOfSeats;
+    void* rightHand = (numOfSeats + (int) id - 1) % numOfSeats;
+    if(state[*id] == HUNGRY){
+        if(state[*leftHand] != EATING){
+            if(state[*rightHand] != EATING){
+                state[id] = EATING;
+                pthread_cond_signal();
+            }
+        }
+    }
+}
