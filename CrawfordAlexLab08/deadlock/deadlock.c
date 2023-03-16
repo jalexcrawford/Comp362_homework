@@ -131,27 +131,24 @@ void loadDependencies(char *inputBuffer, WAIT_FOR_GRAPH *graph)
 }
 
 void detectDeadlocks(WAIT_FOR_GRAPH *graph, int currentNode, PROCESS *currentWaitForList) {
-    graph->dependencies[currentNode][graph->numberOfProcesses + 1] = 1; //set processed to 1
-    if(graph->dependencies[currentNode][graph->numberOfProcesses] == 1){ //check if visited is 1 if visited already, we found a cycle and we need to do stuff.
+    graph->dependencies[currentNode][graph->numberOfProcesses + 1] = '1'; //set processed to 1
+    PROCESS node;
+    node.processName = graph->processes[currentNode];
+    node.next = currentWaitForList;
+    if(graph->dependencies[currentNode][graph->numberOfProcesses] == '1'){ //check if visited is 1 if visited already, we found a cycle and we need to do stuff.
         deadlockDetected = true;
-        printTable(graph);
-        printf(">> DEADLOCKED <<");
-        printCycle(currentWaitForList);
+        printf(">> DEADLOCKED <<\n");
+        printCycle(&node);
         return;
     }else{
-        (graph->dependencies[currentNode][graph->numberOfProcesses]) = 1;
-        printf("visited node %s \n", graph->processes[currentNode]);
-        printTable(graph);
+        (graph->dependencies[currentNode][graph->numberOfProcesses]) = '1';
         for(int i = 0; i < graph->numberOfProcesses; i++){
-            if(graph->dependencies[currentNode][i] == 1){
-                PROCESS node;
-                node.processName = graph->processes[currentNode];
-                node.next = currentWaitForList;
+            if(graph->dependencies[currentNode][i] == '1'){
                 detectDeadlocks(graph, i, &node);
             }
         }
     }
-   
+    graph->dependencies[currentNode][graph->numberOfProcesses] = '0';
 }
 
 void printTable(WAIT_FOR_GRAPH *graph) {
@@ -169,5 +166,5 @@ void printCycle(PROCESS *list) {
         return;
     }
     printCycle(list->next);
-    printf("%s ", list->processName);
+    printf("%s\n", list->processName);
 }
