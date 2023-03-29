@@ -103,8 +103,8 @@ void displayBankState()
  */
 bool isSafeState(int customerNum, double *request)
 {
-    // TODO implement
-    return true; // TODO: modify as appropriate
+
+    return true;
 }
 
 /***
@@ -112,8 +112,7 @@ bool isSafeState(int customerNum, double *request)
  */
 bool solvencyTest(int customerNum, double *request)
 {
-    // TODO implement
-    return true; // TODO: modify as appropriate
+    return *maximum[customerNum] > *request; 
 }
 
 /***

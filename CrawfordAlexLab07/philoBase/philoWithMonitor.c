@@ -9,21 +9,23 @@
 
 //enumerate states
 enum STATE {THINKING, HUNGRY, EATING}; 
+enum STATE* state;
 
 //pointer to a function that is executed by every thread (philosopher)
-void *philosopher(int *id);
+void *philosopher(void *id);
 
 //pick up chopsticks #howYOUdoin'
-void* pickup(___int_size_t_h* id);
+void pickup(void* id);
 
 //put down chopstick
-void* putdown(int* id);
+void putdown(void* id);
 
 //check if a chopstick in use
-void* test(int* id);
+void test(void* id);
 
-//array holding IDs of chopsticks
+//array holding IDs of chopsticks and wait signals for each chopstic
 pthread_mutex_t *chopstick;
+pthread_cond_t *cond;
 
 int numOfSeats, numOfTurns;
 
@@ -39,8 +41,9 @@ int main(int argc, char **argv)
     numOfTurns = strtod(argv[2], NULL);
 
     chopstick = calloc(numOfSeats, sizeof(pthread_mutex_t));
+    cond = calloc(numOfSeats, sizeof(pthread_cond_t));
 
-    enum STATE state[numOfSeats];
+    state = malloc(sizeof(enum STATE) * numOfSeats);
 
 
     // set the seed for random number generator
@@ -56,8 +59,10 @@ int main(int argc, char **argv)
 
     long i;
     //initialize chopsticks
-    for (i = 0; i < numOfSeats; i++)
+    for (i = 0; i < numOfSeats; i++){
         pthread_mutex_init(chopstick + i, NULL);
+        pthread_cond_init(cond + i, NULL);
+    }
 
     //create philosophers
     for (i = 0; i < numOfSeats; i++){
@@ -78,7 +83,7 @@ int main(int argc, char **argv)
     return 0;
 }
 
-void *philosopher(int *num)
+void *philosopher(void *num)
 {
     int id = (long) num;
 
@@ -89,9 +94,9 @@ void *philosopher(int *num)
     int i;
     for (i = 0; i < numOfTurns; i++)
     {
-        pickup(id);
-        printf("Eating");
-        putdown(id);
+        pickup(num);
+        printf("Phlisopher %d is eating for time #%d.\n", id,i);
+        putdown(num);
     }
 
     printf(">>>>>> Philsopher no. %d finished meal. <<<<<<\n", id);
@@ -99,24 +104,36 @@ void *philosopher(int *num)
     pthread_exit(NULL);
 }
 
-void *pickup(void* id){
-    state[id] = HUNGRY;
+void pickup(void* id){
+    state[(int) id] = HUNGRY;
     test(id);
-    if(state[id] != EATING){
-        pthread_cond_wait();
+    if(state[(int) id] != EATING){
+        pthread_cond_wait(&cond[(int)id], &chopstick[ (int) id]);
     }
 
 }
 
-void* test(void* id){
-    void* leftHand = (numOfSeats + (int) id + 1) % numOfSeats;
-    void* rightHand = (numOfSeats + (int) id - 1) % numOfSeats;
-    if(state[*id] == HUNGRY){
-        if(state[*leftHand] != EATING){
-            if(state[*rightHand] != EATING){
-                state[id] = EATING;
-                pthread_cond_signal();
+void putdown(void* id){
+    state[(int) id] = THINKING;
+    test(id);
+}
+
+void test(void* id){
+    int leftHand = (numOfSeats + (int) id + 1) % numOfSeats;
+    int rightHand = (numOfSeats + (int) id - 1) % numOfSeats;
+    if(state[(int) id] == HUNGRY){
+        if(state[leftHand] != EATING){
+            if(state[rightHand] != EATING){
+                state[(int) id] = EATING;
+                pthread_cond_signal(&cond[(int) id]);
             }
+        }
+    }else if(state[(int) id] == THINKING){
+        if(state[leftHand] == HUNGRY){
+            pthread_cond_signal(&cond[leftHand]);
+        }
+        if(state[rightHand] == HUNGRY){
+            pthread_cond_signal(&cond[rightHand]);
         }
     }
 }
