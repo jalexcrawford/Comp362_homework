@@ -14,7 +14,9 @@ int findOldest(PROC *table);
  */
 void initInverted(PROC **table, int msize, int fsize)
 {
-    // TODO: implement
+    tableSize = msize / fsize;
+    frameSize = fsize;
+    *table = calloc(tableSize, sizeof(PROC));
 }
 
 
@@ -25,7 +27,18 @@ void initInverted(PROC **table, int msize, int fsize)
  */
 long translate(PROC *table, int pid, int page, int offset)
 {
-    // TODO: implement
+    long address = 0;
+    int index = lookUp(table,pid,page);
+
+    struct timespec time;
+    clock_gettime(CLOCK_REALTIME, &time);
+
+    address = index*frameSize + offset;
+    table[index].page = page;
+    table[index].pid = pid;
+    table[index].timeStamp = time.tv_sec * 1000000000 +time.tv_nsec;
+    return address;
+
 }
 
 //
@@ -33,7 +46,14 @@ long translate(PROC *table, int pid, int page, int offset)
 //
 int lookUp(PROC *table, int pid, int page)
 {
-    // TODO: implement
+    for(int i = 0; i < tableSize; i++){
+        if(table[i].page == page){
+            if(table[i].pid == pid){
+                return i;
+            }
+        }
+    }
+    return findOldest(table);
 }
 
 //
@@ -41,7 +61,18 @@ int lookUp(PROC *table, int pid, int page)
 //
 int findOldest(PROC *table)
 {
-    // TODO: implement
+    time_t oldest;
+    time(&oldest);
+    int replacePosition = 0;
+    for(int i = 0; i < tableSize; i++){
+        if(table[i].timeStamp == 0){
+            return i;
+        }else if(table[i].timeStamp < oldest){
+            oldest = table[i].timeStamp;
+            replacePosition = i;
+        }
+    }
+    return replacePosition;
 }
 
 

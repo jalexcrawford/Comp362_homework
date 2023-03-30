@@ -35,3 +35,12 @@ CrawfordAlexLab08/deadlock/cmake/Makefile
 CrawfordAlexLab08/deadlock/cmake/bin/deadlock
 CrawfordAlexLab08/deadlock/cmake/CMakeFiles/3.16.3/CompilerIdC/CMakeCCompilerId.c
 CrawfordAlexLab08/deadlock/cmake/CMakeFiles/Makefile2
+CrawfordAlexLab09/dynLibExmpl/testDyLibImplicitMain
+CrawfordAlexLab09/inverted(1)/inverted/cmake/bin/inverted
+CrawfordAlexLab09/inverted(1)/inverted/cmake/CMakeFiles/3.16.3/CompilerIdC/CMakeCCompilerId.c
+CrawfordAlexLab09/inverted(1)/inverted/cmake/CMakeFiles/3.16.3/CompilerIdCXX/CMakeCXXCompilerId.cpp
+CrawfordAlexLab09/inverted(1)/inverted/cmake/CMakeFiles/Makefile2
+CrawfordAlexLab09/inverted(1)/inverted/cmake/Makefile
+CrawfordAlexLab09/statLibExmpl/libgiveMeNum.a
+CrawfordAlexLab09/statLibExmpl/testNoLib
+CrawfordAlexLab09/statLibExmpl/testStatLib

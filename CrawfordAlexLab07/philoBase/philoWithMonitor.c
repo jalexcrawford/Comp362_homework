@@ -1,3 +1,8 @@
+/**
+  * Alex Crawford
+  * COMP 362L-01
+  * Spring 2023
+ **/
 #include <pthread.h>
 #include <stdio.h>
 #include <unistd.h>
