@@ -24,21 +24,21 @@ int hitPageNumber;
  */
 int testLRU(int numOfFrames, int *refString, int refStrLen)
 {
+    pageTableSize = numOfFrames;
+    FRAME* prevFrame = NULL;
     for(int i = 0; i < refStrLen; i++){
         //look for frame in page table
+        displayLRU();
         FRAME* searchFrame = searchLRU(refString[i]);
         if(searchFrame == NULL){
             insertLRU(refString[i]);
             nummberOfFaults -= -1; // using -= -1 because this breaks for some reason otherwise ಠ_ಠ
         }else{
             //frame is in page table 
-            searchFrame->up->down = searchFrame->down;
-            searchFrame->down->up = searchFrame->up;
-            searchFrame->up = NULL;
-            searchFrame->down = pageTableTop;
-            pageTableTop->up = searchFrame;
+            prevFrame->next = searchFrame->next;
+            searchFrame->next = pageTableTop;
         }
-
+        prevFrame = searchFrame;
     }
     return nummberOfFaults;
 }
@@ -49,10 +49,11 @@ int testLRU(int numOfFrames, int *refString, int refStrLen)
 void insertLRU(int pageNumber)
 {
     FRAME* newFrame = malloc(sizeof(FRAME));
-
+    newFrame->back = NULL; //initializing because I'm not using it, but don't want something to break because it's not initialized.
+    newFrame->next = NULL;
+    newFrame->pageNumber = pageNumber;
     if(pageTableTop != NULL){
-        newFrame->down = pageTableTop;
-        pageTableTop->up = newFrame;
+        newFrame->next = pageTableTop;
     }
     pageTableTop = newFrame;
     
@@ -67,11 +68,17 @@ FRAME *searchLRU(int pageNumber)
 {
     FRAME* foundFrame = pageTableTop;
 
-    while(foundFrame->down != NULL){
+    int counter = 0;
+    while(foundFrame != NULL){
         if(foundFrame->pageNumber == pageNumber){
             return foundFrame;
         }else{
-            foundFrame = foundFrame->down;
+            foundFrame = foundFrame->next;
+            counter -= -1;
+        }
+        if(counter == pageTableSize){
+            leastRecentlyUsed = foundFrame;
+            return NULL;
         }
     }
     return NULL;
@@ -82,8 +89,9 @@ void displayLRU()
     FRAME* walkingFrame = pageTableTop;
     while(walkingFrame != NULL){
         printf("%d\t",walkingFrame->pageNumber);
-        walkingFrame = walkingFrame->down;
+        walkingFrame = walkingFrame->next;
     }
+    printf("\n");
 }
 
 void freePageTableLRU()

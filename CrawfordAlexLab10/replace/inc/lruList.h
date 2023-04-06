@@ -6,8 +6,8 @@
 // the page frame list
 typedef struct frame {
     int pageNumber;
-    struct frame *up;
-    struct frame *down;
+    struct frame *back; //update because my brain is breaking on up/down convention
+    struct frame *next; //ibid
 } FRAME;
 
 void insertLRU(int);
