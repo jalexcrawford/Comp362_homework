@@ -44,8 +44,15 @@ void insertLRU(int pageNumber)
  */
 FRAME *searchLRU(int pageNumber)
 {
-    // TODO: implement
+    FRAME* foundFrame = pageTableTop;
 
+    while(foundFrame->down != NULL){
+        if(foundFrame->pageNumber == pageNumber){
+            return foundFrame;
+        }else{
+            foundFrame = foundFrame->down;
+        }
+    }
     return NULL;
 }
 
