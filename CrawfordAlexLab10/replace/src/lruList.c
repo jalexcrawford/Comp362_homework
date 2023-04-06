@@ -25,20 +25,15 @@ int hitPageNumber;
 int testLRU(int numOfFrames, int *refString, int refStrLen)
 {
     pageTableSize = numOfFrames;
-    FRAME* prevFrame = NULL;
     for(int i = 0; i < refStrLen; i++){
         //look for frame in page table
-        displayLRU();
         FRAME* searchFrame = searchLRU(refString[i]);
         if(searchFrame == NULL){
             insertLRU(refString[i]);
             nummberOfFaults -= -1; // using -= -1 because this breaks for some reason otherwise ಠ_ಠ
-        }else{
-            //frame is in page table 
-            prevFrame->next = searchFrame->next;
-            searchFrame->next = pageTableTop;
         }
-        prevFrame = searchFrame;
+        printf("%d-> ",refString[i]);
+        displayLRU();
     }
     return nummberOfFaults;
 }
@@ -49,11 +44,14 @@ int testLRU(int numOfFrames, int *refString, int refStrLen)
 void insertLRU(int pageNumber)
 {
     FRAME* newFrame = malloc(sizeof(FRAME));
-    newFrame->back = NULL; //initializing because I'm not using it, but don't want something to break because it's not initialized.
+    newFrame->back = NULL;
     newFrame->next = NULL;
     newFrame->pageNumber = pageNumber;
     if(pageTableTop != NULL){
         newFrame->next = pageTableTop;
+    }else{
+        leastRecentlyUsed = newFrame;
+        leastRecentlyUsed->next = NULL;
     }
     pageTableTop = newFrame;
     
@@ -67,12 +65,17 @@ void insertLRU(int pageNumber)
 FRAME *searchLRU(int pageNumber)
 {
     FRAME* foundFrame = pageTableTop;
+    FRAME* prevFrame = pageTableTop;
 
     int counter = 0;
     while(foundFrame != NULL){
         if(foundFrame->pageNumber == pageNumber){
+            prevFrame->next = foundFrame->next;
+            foundFrame->next = pageTableTop;
+            pageTableTop = foundFrame;
             return foundFrame;
         }else{
+            prevFrame = foundFrame;
             foundFrame = foundFrame->next;
             counter -= -1;
         }
@@ -96,6 +99,11 @@ void displayLRU()
 
 void freePageTableLRU()
 {
-    // TODO: implement
+    FRAME* walkFrame = pageTableTop;
+    while(walkFrame != NULL){
+        pageTableTop = walkFrame->next;
+        free(walkFrame);
+        walkFrame = pageTableTop;
+    }
 }
 
