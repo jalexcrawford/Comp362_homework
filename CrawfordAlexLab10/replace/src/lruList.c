@@ -24,9 +24,23 @@ int hitPageNumber;
  */
 int testLRU(int numOfFrames, int *refString, int refStrLen)
 {
-    // TODO: implement
+    for(int i = 0; i < refStrLen; i++){
+        //look for frame in page table
+        FRAME* searchFrame = searchLRU(refString[i]);
+        if(searchFrame == NULL){
+            insertLRU(refString[i]);
+            nummberOfFaults -= -1; // using -= -1 because this breaks for some reason otherwise ಠ_ಠ
+        }else{
+            //frame is in page table 
+            searchFrame->up->down = searchFrame->down;
+            searchFrame->down->up = searchFrame->up;
+            searchFrame->up = NULL;
+            searchFrame->down = pageTableTop;
+            pageTableTop->up = searchFrame;
+        }
 
-    return 0;
+    }
+    return nummberOfFaults;
 }
 
 /*
@@ -34,7 +48,14 @@ int testLRU(int numOfFrames, int *refString, int refStrLen)
  */
 void insertLRU(int pageNumber)
 {
-    // TODO: implement
+    FRAME* newFrame = malloc(sizeof(FRAME));
+
+    if(pageTableTop != NULL){
+        newFrame->down = pageTableTop;
+        pageTableTop->up = newFrame;
+    }
+    pageTableTop = newFrame;
+    
 }
 
 /**
@@ -58,7 +79,11 @@ FRAME *searchLRU(int pageNumber)
 
 void displayLRU()
 {
-    // TODO: implement
+    FRAME* walkingFrame = pageTableTop;
+    while(walkingFrame != NULL){
+        printf("%d\t",walkingFrame->pageNumber);
+        walkingFrame = walkingFrame->down;
+    }
 }
 
 void freePageTableLRU()
