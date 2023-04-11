@@ -69,6 +69,9 @@ FRAME *searchLRU(int pageNumber)
 
     int counter = 0;
     while(foundFrame != NULL){
+        if(pageTableTop->pageNumber == pageNumber){
+            return pageTableTop;
+        }
         if(foundFrame->pageNumber == pageNumber){
             prevFrame->next = foundFrame->next;
             foundFrame->next = pageTableTop;
