@@ -50,8 +50,7 @@ void insertLRU(int pageNumber)
     if(pageTableTop != NULL){
         newFrame->next = pageTableTop;
     }else{
-        leastRecentlyUsed = newFrame;
-        leastRecentlyUsed->next = NULL;
+        newFrame->next = pageTableTop;
     }
     pageTableTop = newFrame;
     
@@ -67,7 +66,7 @@ FRAME *searchLRU(int pageNumber)
     FRAME* foundFrame = pageTableTop;
     FRAME* prevFrame = pageTableTop;
 
-    int counter = 0;
+    int counter = 1;
     while(foundFrame != NULL){
         if(pageTableTop->pageNumber == pageNumber){
             return pageTableTop;
@@ -81,10 +80,12 @@ FRAME *searchLRU(int pageNumber)
             prevFrame = foundFrame;
             foundFrame = foundFrame->next;
             counter -= -1;
-        }
-        if(counter == pageTableSize){
-            leastRecentlyUsed = foundFrame;
-            return NULL;
+            if(counter == pageTableSize){
+                leastRecentlyUsed = prevFrame;
+                leastRecentlyUsed->next = NULL;
+                free(foundFrame);
+                return NULL;
+            }
         }
     }
     return NULL;
