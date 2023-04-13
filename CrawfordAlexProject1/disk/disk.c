@@ -19,6 +19,9 @@ CIDEV_RET_CODE lba2chs(lba_t lba, chs_t *chs)
         return CIDEV_ADDRESS_ERROR;
 
 // todo: implement
+    chs->cyl = lba/(NUM_OF_HEADS*NUM_OF_SECTS);
+    chs->head = lba%(NUM_OF_HEADS*NUM_OF_SECTS)/(NUM_OF_SECTS);
+    chs->sect = lba%(NUM_OF_SECTS);
 
     return CIDEV_SUCCESS;
 }
@@ -31,6 +34,10 @@ CIDEV_RET_CODE lba2chs(lba_t lba, chs_t *chs)
 CIDEV_RET_CODE chs2lba(chs_t *chs, lba_t *lba)
 {
 // todo: implement
+    if(chs->cyl > NUM_OF_CYLS || chs->head > NUM_OF_HEADS || chs->sect > NUM_OF_SECTS){
+        return CIDEV_ADDRESS_ERROR;
+    }
+    *lba = chs->cyl*(NUM_OF_HEADS*NUM_OF_SECTS) + chs->head*(NUM_OF_SECTS) + chs->sect;
 
     return CIDEV_SUCCESS;
 }
