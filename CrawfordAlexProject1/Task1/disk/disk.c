@@ -50,29 +50,18 @@ CIDEV_RET_CODE chs2lba(chs_t *chs, lba_t *lba)
  */
 CIDEV_RET_CODE readDisk(lba_t lba, unsigned int size, char **buffer)
 {
-    // todo: verify parameters
-    if (lba >= MAX_LOGICAL_BLOCK){
-        return CIDEV_ADDRESS_ERROR;
-    }
-    if(lba + size > MAX_LOGICAL_BLOCK){
-        return CIDEV_SPACE_ERROR;
-    }
-
-    int numberOfReads = size/SECT_SIZE;
+// todo: verify parameters
 
     chs_t chs;
-    
-    *buffer = malloc((SECT_SIZE)*sizeof(char)); // todo: modify as required edit: allocate SECT_SIZE chars to the buffer array
-    for(int i = 0; i < size; i++){
-        lba2chs(lba + i,&chs);
-        memcpy(((*buffer) + (i*SECT_SIZE)), disk[chs.cyl][chs.head][chs.sect], SECT_SIZE);
-    } //nice
-    if(size%SECT_SIZE != 0){
-        memcpy((*buffer) + (numberOfReads*SECT_SIZE), disk[chs.cyl][chs.head][chs.sect + size], SECT_SIZE);
-    }
-    *((buffer) + size) =  NULL;
 
-    return CIDEV_SUCCESS;
+    *buffer = malloc(11*sizeof(char)); // todo: modify as required
+    strcpy(*buffer, "CHANGE ME!");
+
+    CIDEV_RET_CODE errCode = CIDEV_SUCCESS;
+
+    // todo: implement
+
+    return errCode;
 }
 
 /***
@@ -113,37 +102,13 @@ CIDEV_RET_CODE clearBlock(lba_t lba)
  */
 CIDEV_RET_CODE writeDisk(lba_t lba, char *buffer)
 {
-    return CIDEV_ADDRESS_ERROR;
-    // todid: verify the parameters
-    if (lba >= MAX_LOGICAL_BLOCK){
-        return CIDEV_ADDRESS_ERROR;
-    }
-    if(lba + SECT_SIZE > MAX_LOGICAL_BLOCK){
-        return CIDEV_SPACE_ERROR;
-    }
-    if(clearBlock(lba) != CIDEV_SUCCESS){
-        return CIDEV_SPACE_ERROR;
-    }
+// todo: verify the parameters
+
+    CIDEV_RET_CODE errCode = CIDEV_SUCCESS;
+
     chs_t chs;
-    int j = 0;
-    //three cases first if the buffer is less than a multiple
-    for(int i = 0; i < SECT_SIZE; i++){
-        if((buffer + i) == NULL){
-            lba2chs(lba, &chs);
-            memcpy(disk[chs.cyl][chs.head][chs.sect], buffer, i);
-            return CIDEV_SUCCESS;
-        }
-    }
-    while((buffer + (j + 1)*SECT_SIZE) != NULL){
-        for(int i = 0; i < SECT_SIZE; i++){
-            if((buffer + i) == NULL){
-                lba2chs(lba + j, &chs);
-                memcpy(disk[chs.cyl][chs.head][chs.sect], buffer + j, SECT_SIZE);
-                return CIDEV_SUCCESS;
-            }
-        }
-        lba2chs(lba + j, &chs);
-        memcpy(disk[chs.cyl][chs.head][chs.sect], buffer + j, SECT_SIZE);
-    }
-    return CIDEV_SUCCESS;
+
+// todo: implement
+
+    return errCode;
 }
