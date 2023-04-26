@@ -15,9 +15,9 @@ disk_t disk;
  */
 CIDEV_RET_CODE lba2chs(lba_t lba, chs_t *chs)
 {
-    if (lba >= MAX_LOGICAL_BLOCK)
+    if (lba > MAX_LOGICAL_BLOCK){
         return CIDEV_ADDRESS_ERROR;
-
+    }
 // todo: implement
     chs->cyl = lba/(NUM_OF_HEADS*NUM_OF_SECTS);
     chs->head = lba%(NUM_OF_HEADS*NUM_OF_SECTS)/(NUM_OF_SECTS);
@@ -50,18 +50,31 @@ CIDEV_RET_CODE chs2lba(chs_t *chs, lba_t *lba)
  */
 CIDEV_RET_CODE readDisk(lba_t lba, unsigned int size, char **buffer)
 {
-// todo: verify parameters
+    // todo: verify parameters
+    if (lba >= MAX_LOGICAL_BLOCK){
+        return CIDEV_ADDRESS_ERROR;
+    }
+    if(lba + size/SECT_SIZE > MAX_LOGICAL_BLOCK){
+        return CIDEV_SPACE_ERROR;
+    }
 
+    int numberOfReads = size/SECT_SIZE;
+    int i;
+    
     chs_t chs;
+    
+    *buffer = malloc(size + 1); // todo: modify as required edit: allocate SECT_SIZE chars to the buffer array
+    for(i = 0; i < numberOfReads; i++){
+        lba2chs(lba + (i),&chs);
+        memcpy(((*buffer) + (i*SECT_SIZE)), disk[chs.cyl][chs.head][chs.sect], SECT_SIZE);
+    } //nice
+    if(size%SECT_SIZE != 0){
+        lba2chs(lba + i, &chs);
+        memcpy((*buffer) + (numberOfReads*SECT_SIZE), disk[chs.cyl][chs.head][chs.sect], size % SECT_SIZE);
+    }
+    (*buffer)[size] =  '\0';
 
-    *buffer = malloc(11*sizeof(char)); // todo: modify as required
-    strcpy(*buffer, "CHANGE ME!");
-
-    CIDEV_RET_CODE errCode = CIDEV_SUCCESS;
-
-    // todo: implement
-
-    return errCode;
+    return CIDEV_SUCCESS;
 }
 
 /***
@@ -102,13 +115,25 @@ CIDEV_RET_CODE clearBlock(lba_t lba)
  */
 CIDEV_RET_CODE writeDisk(lba_t lba, char *buffer)
 {
-// todo: verify the parameters
-
-    CIDEV_RET_CODE errCode = CIDEV_SUCCESS;
-
+    // todid: verify the parameters
+    if (lba + strlen(buffer)/SECT_SIZE >= MAX_LOGICAL_BLOCK){
+        return CIDEV_ADDRESS_ERROR;
+    }
     chs_t chs;
+    int size = strlen(buffer);
+    int numberOfWrites = size/SECT_SIZE;
+    int i;
 
-// todo: implement
-
-    return errCode;
+    for(i = 0; i < numberOfWrites; i++){
+        if(lba2chs(lba + (i), &chs) == CIDEV_ADDRESS_ERROR){
+            return CIDEV_ADDRESS_ERROR;
+        }
+        memcpy(disk[chs.cyl][chs.head][chs.sect], buffer + (i*SECT_SIZE), SECT_SIZE);
+        
+    }
+    if(size % SECT_SIZE !=0){
+            lba2chs(lba + i, &chs);
+            memcpy(disk[chs.cyl][chs.head][chs.sect], buffer + (i *SECT_SIZE), size % SECT_SIZE);
+    }    
+    return CIDEV_SUCCESS;
 }

@@ -54,7 +54,7 @@ CIDEV_RET_CODE readDisk(lba_t lba, unsigned int size, char **buffer)
     if (lba >= MAX_LOGICAL_BLOCK){
         return CIDEV_ADDRESS_ERROR;
     }
-    if(lba + size > MAX_LOGICAL_BLOCK){
+    if(lba + size/SECT_SIZE > MAX_LOGICAL_BLOCK){
         return CIDEV_SPACE_ERROR;
     }
 
@@ -70,9 +70,9 @@ CIDEV_RET_CODE readDisk(lba_t lba, unsigned int size, char **buffer)
     } //nice
     if(size%SECT_SIZE != 0){
         lba2chs(lba + i, &chs);
-        memcpy((*buffer) + (numberOfReads*SECT_SIZE), disk[chs.cyl][chs.head][chs.sect + size], size % SECT_SIZE);
+        memcpy((*buffer) + (numberOfReads*SECT_SIZE), disk[chs.cyl][chs.head][chs.sect], size % SECT_SIZE);
     }
-    *((buffer) + size) =  '\0';
+    (*buffer)[size] =  '\0';
 
     return CIDEV_SUCCESS;
 }
@@ -116,7 +116,7 @@ CIDEV_RET_CODE clearBlock(lba_t lba)
 CIDEV_RET_CODE writeDisk(lba_t lba, char *buffer)
 {
     // todid: verify the parameters
-    if (lba + strlen(buffer) >= MAX_LOGICAL_BLOCK){
+    if (lba + strlen(buffer)/SECT_SIZE >= MAX_LOGICAL_BLOCK){
         return CIDEV_ADDRESS_ERROR;
     }
     chs_t chs;
