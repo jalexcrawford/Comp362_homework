@@ -1,4 +1,4 @@
-# Install script for directory: /home/alex/Desktop/comp362/CrawfordAlexLab04/task2
+# Install script for directory: /home/alex/Documents/GitHub/Comp362/CrawfordAlexLab04/task2
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/alex/Desktop/comp362/CrawfordAlexLab04/task2/cmake/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/alex/Documents/GitHub/Comp362/CrawfordAlexLab04/task2/cmake/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

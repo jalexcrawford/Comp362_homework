@@ -1,12 +1,12 @@
 [
 {
-  "directory": "/home/alex/Desktop/comp362/CrawfordAlexLab04/task2/cmake",
-  "command": "/usr/bin/cc    -D_FILE_OFFSET_BITS=64   -std=gnu11 -o CMakeFiles/node.dir/node.c.o   -c /home/alex/Desktop/comp362/CrawfordAlexLab04/task2/node.c",
-  "file": "/home/alex/Desktop/comp362/CrawfordAlexLab04/task2/node.c"
+  "directory": "/home/alex/Documents/GitHub/Comp362/CrawfordAlexLab04/task2/cmake",
+  "command": "/usr/bin/cc    -D_FILE_OFFSET_BITS=64   -std=gnu11 -o CMakeFiles/node.dir/node.c.o   -c /home/alex/Documents/GitHub/Comp362/CrawfordAlexLab04/task2/node.c",
+  "file": "/home/alex/Documents/GitHub/Comp362/CrawfordAlexLab04/task2/node.c"
 },
 {
-  "directory": "/home/alex/Desktop/comp362/CrawfordAlexLab04/task2/cmake",
-  "command": "/usr/bin/cc    -D_FILE_OFFSET_BITS=64   -std=gnu11 -o CMakeFiles/monitor.dir/monitor.c.o   -c /home/alex/Desktop/comp362/CrawfordAlexLab04/task2/monitor.c",
-  "file": "/home/alex/Desktop/comp362/CrawfordAlexLab04/task2/monitor.c"
+  "directory": "/home/alex/Documents/GitHub/Comp362/CrawfordAlexLab04/task2/cmake",
+  "command": "/usr/bin/cc    -D_FILE_OFFSET_BITS=64   -std=gnu11 -o CMakeFiles/monitor.dir/monitor.c.o   -c /home/alex/Documents/GitHub/Comp362/CrawfordAlexLab04/task2/monitor.c",
+  "file": "/home/alex/Documents/GitHub/Comp362/CrawfordAlexLab04/task2/monitor.c"
 }
 ]

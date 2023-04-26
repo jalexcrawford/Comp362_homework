@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/alex/Desktop/comp362/CrawfordAlexLab04/task2/message.h
+/home/alex/Documents/GitHub/Comp362/CrawfordAlexLab04/task2/message.h
 stdio.h
 -
 stdlib.h
@@ -20,7 +20,7 @@ mqueue.h
 stdbool.h
 -
 
-/home/alex/Desktop/comp362/CrawfordAlexLab04/task2/node.c
+/home/alex/Documents/GitHub/Comp362/CrawfordAlexLab04/task2/node.c
 message.h
-/home/alex/Desktop/comp362/CrawfordAlexLab04/task2/message.h
+/home/alex/Documents/GitHub/Comp362/CrawfordAlexLab04/task2/message.h
 

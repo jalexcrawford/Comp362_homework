@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/alex/Desktop/comp362/CrawfordAlexLab04/task2/node.c" "/home/alex/Desktop/comp362/CrawfordAlexLab04/task2/cmake/CMakeFiles/node.dir/node.c.o"
+  "/home/alex/Documents/GitHub/Comp362/CrawfordAlexLab04/task2/node.c" "/home/alex/Documents/GitHub/Comp362/CrawfordAlexLab04/task2/cmake/CMakeFiles/node.dir/node.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
